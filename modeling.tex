@@ -1,0 +1,136 @@
+What and how will we model the oceanographic domain, what tools, methods and what kinds of predictions will the models make?
+
+As stated in the introduction a central objective of \proj is to test
+observation strategies and evaluate the capacity to characterize and
+forecast the evolution of the prevailing coastal ocean conditions using
+a high resolution limited area model with assimilation. The expected
+improvement of this capacity will reinforce the ability to support
+different sectors in the area (from defense and crisis response
+operations to support to fisheries, environmental managers and general
+coastal and nautical communities). It will also contribute to a
+significant improvement in the present understanding of the combined
+physical and biogeochemical processes that, in this area, contribute to
+drive rapid development at all levels of the trophic chain / shape the
+coastal ocean environment and associated ecosystems.  Central to this
+effort is the use of the MIT Multidisciplinary Simulation, Estimation,
+and Assimilation System – MSEAS (MSEAS Group, 2010). The core of the
+system is a free surface primitive equation model Continue MODEL
+DESCRIPTION MSEAS integrates a biogeochemical model developed initially
+by Dusenberry and latter improved by Lermusiaux which integrates 5
+compartments (chlorophyll, phytoplankton based on nitrate, phytoplankton
+based on ammonia, zooplankton, nitrate, ammonia and detritus) and 30
+parameters.
+
+\proj will provide the opportunity to implement MSEAS at Instituto
+Hidrografico profiting for the articulation between IH and MIT teams
+during the preparatory phase of the exercise and the
+
+A second and simpler model will also be used during \proje.  The Harvard
+Ocean Prediction System (HOPS) is a rigid lid primitive equations model
+that integrates an OI assimilation scheme. HOPS have been used in IH for
+the operational support during navy exercises, major crises at sea or in
+the support of research activities. It can be used in a very flexible
+way for example using relatively modest computational resources existent
+onboard research vessels. HOPS is also equipped with the initial version
+of the Dusenberry biogeochemical model.
+
+The implementation of both these models will be guided by the experience
+gathered by a previous implementation of the HOPS model for this same
+area. The model was configured using a high resolution Cartesian
+horizontal grid (300m resolution), 30 double sigma levels in the
+vertical and a realistic topography of the Nazare Canyon area
+conditioned to meet the hydrostatic consistency requisites.  Atmospheric
+forcing conditions will be provided by available operational forecast
+models. Operational models at Instituto Hidrográfico use the analysis
+and forecasts to 6 days provided by the European Centre for Medium Range
+Weather Forecast (ECMWF) and made available by the portuguese node at
+(Instituto Português do Mar e da Atmosfera).  Boundary conditions at the
+open boundaries of the models will be provided by available regional
+models. These include the results provided by the Copernicus Marine
+Service for the IBIROSS area which are NEMO model (analysis and
+forecasts to 5 days, 3km resolution and 50 vertical levels) or the
+results from the HYCOM model configuration run operationally at
+Instituto Hidrográfico covering the Iberian area and Moroccan margin.
+Boundary conditions at the coastal boundary associated with freshwater
+outflows due to some of he small rivers that directly affect the model
+domain area will be incorporated using the information available about
+discharge conditions provided by the National Information System on
+Hydric Resources portal made available by the Portuguese Agency for the
+Environment.
+
+Data sets to model initialization and assimilation
+
+\begin{table}[!t]
+  \centering
+  \vspace{-0.5cm}
+  \begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|p{4cm}|}\hline 
+    % \rowcolor{Gray}
+    \bfseries  &\bfseries Week 1 &\bfseries Week 2 &\bfseries Week 3 \\
+    \hline
+    Main Goals& Precursor survey; 
+                To collect data that allow to build initialization
+                fields and define model parameters. To calibrate sensor response (phytoplankton from
+                fluorometry, zooplankton from VMADCP)& Update Survey 1:
+                                                       AUV operations; potential additional measurements using small boats
+                                                       and low cost measurements & Update Survey 2:
+                                                                                   Ship measurements during dedicated survey, AUV operations from ship and small boats\\
+    \hline
+    Observations at sea&&&\\
+    \hline
+    AUVs&&&\\
+    \hline
+    Gliders&&&\\
+    \hline
+    UAVs&&&\\
+    \hline
+    ASVs&&&\\
+    Ship-based observations& Ship crossing the area, deploy Multipametric buoy M2
+                             CTDs/Water Sampling at key positions
+                             VMADCP collected in area/key points&& CTD/LADCP profiles
+                                                                   Rosette
+                                                                   Samples
+                                                                   for
+                                                                   nutrients/phyto/zoo-plankton
+                                                                   VMADCP on transit and in station. 
+                                                                   Daily transmission of  CTD casts and VMADCP data to \inst\\
+    \hline
+    Small boat operations&CTD + fluorometry + light profiles at key
+                           stations. Water samples at key points for
+                           nutrients/phyto+zoo-plankton Vertical net
+                           samples for phyto+zoo plankton&&\\
+    \hline    
+    Laboratory Analysis&Samples analyzed for Nutrients at \inst Labs.
+                         Samples analyzed for phyto/zoo-plankton&&Post cruise:
+                                                                   Samples
+                                                                   analyzed
+                                                                   for
+                                                                   Nutrients
+                                                                   at
+                                                                   \inst
+                                                                   Labs
+                                                                   Samples
+                                                                   analyzed
+                                                                   for
+                                                                   phyto/zoo-plankton\\ 
+    \hline
+    Remote Sensing&SST, Chl, Turbidity images (Sentinel) used to
+                    identify the main features and select key points for
+                    observation. 
+                    Surface fields combined with observations in key
+                    points to build initial 3D fields to be used in the
+                    models.&SST, Chl, altimetry data used in assimilation
+                             Turbidity images used to track impacts (if
+                             any) of local rivers and guide
+                             observations.&SST, Chl, altimetry data used in assimilation
+                                            Turbidity images used to
+                                            track impacts (if any) of
+                                            local rivers and guide
+                                            observations.\\
+    \hline
+    Models&Build initialization and initial assimilation fields. 
+            Start model runs (end of the week).&&\\
+    \hline
+  \end{tabular}
+  \caption{Tasks and activities in \proje.}
+  \label{tab:tasks}
+\end{table}
