@@ -2,21 +2,21 @@
 
 \begin{figure}[!h]
   \centering 
-  \subfigure[]{\label{fig:vehicles}\includegraphics[scale=0.07]{fig/vehicles.jpg}}
+  \subfigure[]{\label{fig:vehicles}\includegraphics[scale=0.075]{fig/vehicles.jpg}}
   \hspace{+0.5cm} 
-  \subfigure[]{\label{fig:agent}\includegraphics[scale=0.07]{fig/TREX-1.jpg}}
-  \subfigure[]{\label{fig:components}\includegraphics[scale=0.25]{fig/TREX-auv.pdf}}
+  % \subfigure[]{\label{fig:agent}\includegraphics[scale=0.07]{fig/TREX-1.jpg}}
+  \subfigure[]{\label{fig:components}\includegraphics[scale=0.3]{fig/TREX-auv.pdf}}
   \caption{\subref{fig:vehicles} shows autonomous aerial and
     underwater vehicles from the Univ. of Porto, on a cruise in the
-    Pacific in 2018.  \subref{fig:agent} shows an example of a \rx
-    agent composed of multiple planning \emph{reactors} for
-    partitioned plan synthesis and execution. Each reactor has a
-    specific functional and temporal scope.  \subref{fig:components}
-    shows the hierarchy of architectural components for \proj which
-    consists of an instance of \rx with an embedded planner. Within
-    each \eu reactor, resides a plan database and search engine, which
-    comprise of representational primitives for
-    constraint-based-planning.}
+    Pacific in 2018.  % \subref{fig:agent} shows an example of a \rx
+    % agent composed of multiple planning \emph{reactors} for
+    % partitioned plan synthesis and execution. Each reactor has a
+    % specific functional and temporal scope.
+    \subref{fig:components} shows the hierarchy of architectural
+    components for \rx \cite{py10,rajan12,rajan12b} which consists of
+    an embedded planner on an AUV. Within each \rx component, resides
+    a plan database and search engine, which comprise of
+    representational primitives for constraint-based-planning.}
   \label{fig:ai-figs}
 \end{figure}
 
@@ -82,11 +82,11 @@ synthesizing control actions onboard a robot and decomposing
 high-level objectives sent from shore (or ship or even other
 robots). It builds a task plan to actuate a robot while simultaneously
 observing the evolving state of the robot's surroundings and
-dynamically incorporating plan repair \cite{rajan12,rajan12b}. The
-symbolic planner at the heart of \rx has a rich legacy from \nas
-having flown onboard the Deep Space 1 mission
-\cite{rajan00,jonsson00}, in addition to commanding the two Mars
-Exploration Rovers (MER), \emph{Spirit} and \emph{Opportunity}
+dynamically incorporating plan repair
+\cite{py10,rajan12,rajan12b}. The symbolic planner at the heart of \rx
+has a rich legacy from \nas having flown onboard the Deep Space 1
+mission \cite{rajan00,jonsson00}, in addition to commanding the two
+Mars Exploration Rovers (MER), \emph{Spirit} and \emph{Opportunity}
 \cite{aichang04,bresina05}.
 
 At its core, \rx has been used for dynamic feature tracking and
@@ -99,7 +99,14 @@ robots driven by a range of information sources
 \cite{Das-2010-637,fronts11,olaya12,jdas12,jdas13,das15,fossum18,fossum19,fossum19b,fossum21}.
 For \proj, we will use our reference work on adaptively sampling
 dynamic underwater features, such as a sub-surface Chlorophyl max
-(SCM) using Gaussian Process models \cite{fossum19}.
+(SCM) using Gaussian Process models \cite{fossum19}. \rx will be
+embedded on AUV's to detect and dynamically track chlorophyll patches
+in the water-column, providing high-resolution sampling data to be fed
+into the bio-geochemical model. Predictions of where the patches might
+advect will then be driven by ocean physics in the model and
+ground-truthed by the vehicle in a subsequent iteration of the
+strategy to \texttt{tag}, \texttt{track} and \texttt{observe}
+strategy.
 
 
 
