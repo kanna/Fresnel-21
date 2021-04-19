@@ -1,6 +1,6 @@
-\subsection{AI \& Robotics in \proje}
+\subsection{AI \& Networked Robotics in \proje}
 
-\begin{figure}[!h]
+\begin{figure}[!t]
   \centering 
   \subfigure[]{\label{fig:vehicles}\includegraphics[scale=0.075]{fig/vehicles.jpg}}
   \hspace{+0.5cm} 
@@ -20,9 +20,9 @@
   \label{fig:ai-figs}
 \end{figure}
 
-In \proj we will use a range of well-tested autonomous platforms
-(Fig. \ref{fig:vehicles}) operating with a substantial operational
-legacy\footnote{\url{https://lsts.pt}} in coastal domains
+In \proj we will use a range of well-tested networked autonomous
+platforms (Fig. \ref{fig:vehicles}) operating with a substantial
+operational legacy\footnote{\url{https://lsts.pt}} in coastal domains
 \cite{pinto13,pinto14,sousa16,Ferreira2018,Pinto2018MultipleAV}. To
 bind these unmanned assets, as well as users connecting from different
 locations on shore, we rely on different components of the open source
@@ -35,9 +35,8 @@ underwater platforms with embedded or off-shore decision-making
 capacity which focus on the sense-plan-act control loop embedded on
 autonomous vehicles.
 
-\begin{table}[!t]
+\begin{table}[!b]
   \centering
-  \label{tab:toolchain}
   \footnotesize{
   \begin{tabular}{|p{1.8cm}|p{12.8cm}|p{0.75cm}|}\hline 
     \rowcolor{Gray}
@@ -62,8 +61,10 @@ autonomous vehicles.
           browser; a stripped down alternative to \nep.&\cite{Pinto2018MultipleAV}\\
     \hline
   \end{tabular}
-  \caption{\ls toolchain components and their description with
-    citations to past work.}}
+  \caption{\ls toolchain components critical for networked marine
+    robotics and their description with citations to past work.}
+  \label{tab:toolchain}
+  }
 \end{table}
 
 
@@ -73,9 +74,9 @@ planning/execution temporal framework to execute tasks
 continuously. \rx is the only operational, \emph{deliberative} AI
 based symbolic system in marine robotics anywhere, with a significant
 record of operational use in the US, Portugal, and Norway. It is a
-general purpose software system (Fig. \ref{fig:agent}) that has been
-demonstrated on terrestrial robots \cite{Meeussen10}, as well as in
-space and underwater applications. It enables goal-oriented
+general purpose software system (Fig. \ref{fig:components}) that has
+been demonstrated on terrestrial robots \cite{Meeussen10}, as well as
+in space and underwater applications. It enables goal-oriented
 commanding, balancing responsiveness to dynamic and unpredictable
 environmental conditions with longer term mission goals. It does so by
 synthesizing control actions onboard a robot and decomposing

@@ -2,24 +2,26 @@
  
 % Real-time monitoring systems:
 
-\begin{wrapfigure}{!h}{3.0in}
-  \vspace{-0.8cm}
-  \centering
-  \includegraphics[scale=1.75]{fig/dom-carlos.jpg}
-  \caption{A 70m research vessel, the NRP \emph{Dom Carlos} or its
-    sister vessel will be available for \proje.}
-  \vspace{-0.3cm}
- \label{fig:vessel}
-\end{wrapfigure}
-
 Off shore in the \naz canyon-Berlengas area are two islands of Berlengas
 and Farilho\~es part of a protected nature preserve. With special
 permission we expect to be able to be based in Berlengas for a period of
 3 weeks to conduct off shore operations. A small team will also be
-present onboard the \inst research vessel where if needed, deployment
-and recovery of assets well off shore at the boundaries of the survey
-region, can be done. In addition \inst will be in a position to provide
-a RHIB or a rigid boat for near-shore operations from the two islands.
+present onboard the \inst research vessel (Fig. \ref{fig:vessel}) where
+if needed, deployment and recovery of assets well off shore at the
+boundaries of the survey region, can be done. In addition \inst will be
+in a position to provide a RHIB or a rigid boat for near-shore
+operations from the two islands.
+
+\begin{wrapfigure}{!}{3.0in}
+  % \vspace{-0.8cm}
+  \centering
+  \includegraphics[scale=1.75]{fig/dom-carlos.jpg}
+  \caption{A 70m research vessel, the NRP \emph{Dom Carlos} or its
+    sister vessel will be available for \proje.}
+  % \vspace{-0.3cm}
+ \label{fig:vessel}
+\end{wrapfigure}
+
 
 \univ will provide the bulk of the robotic assets including aerial,
 surface and underwater vehicles as also the team to operate them. The
@@ -81,8 +83,9 @@ such a way as to improve the initialization/assimilation fields and
 parameter definitions to be used in the physical and biogeochemical
 models. To achieve this objective \proj will develop a strategy largely
 inspired by the Rapid Environmental Assessment to navy operations
-\kc{citation?}. Specifically a total of three phases (weeks 1 to 3) are
-planned:
+\kc{citation?}. A summary of roles, tasks and activities of different
+elements in the project is summarized in Table \ref{tab:tasks}. A total
+of three phases (weeks 1 to 3) are planned:
 
 
 \begin{figure}[!t]
@@ -250,7 +253,8 @@ the two weeks of the experiment.
                                                                           and
                                                                           model
                                                                           predictions\\
-    \hline
+                                                                          % \hline
+    \noalign{\hrule height 2pt}
     % Observations at sea&&&\\
     % \hline
     % AUVs&&&\\
@@ -261,18 +265,7 @@ the two weeks of the experiment.
     % \hline
     % ASVs&&&\\
     % \hline
-    Ship-based observations& Research vessel crosses the \naz op area, deploy Multi-parametric buoy
-                             limited CTD casts, water sampling at key stations,
-                             ADCP data collected at key stations&&CTD
-                                                                   and
-                                                                   ADCP profiles,
-                                                                   rosette
-                                                                   samples
-                                                                   for
-                                                                   nutrients/phyto/zoo-plankton
-                                                                   ADCP on transit and at stations\\
-    \hline
-    Autonomous vehicles (UAVs, AUVs, ASVs and Gliders)&Calibrate sensors
+   Autonomous vehicles (UAVs, AUVs, ASVs and Gliders)&Calibrate sensors
                                                         amongst all
                                                         assets incl.
                                                         research vessel
@@ -317,16 +310,19 @@ the two weeks of the experiment.
                                                                    hi-res
                                                                    water-column measurements\\
     \hline
-    Small boat operations&CTD, fluorometry, light profiles and samples at key
-                           stations, for nutrients/phyto+zoo-plankton.
-                           Vertical net samples for phyto- \& zoo-plankton&&\\
-    \hline    
-    Laboratory Analysis&Samples analyzed for Nutrients at \inst Labs and
-                         for phyto/zoo-plankton&&Post cruise:
-                                                  Samples analyzed
-                                                  for nutrients \& phyto/zoo-plankton\\
+    Models&Build initialization and initial assimilation fields. 
+            Start model runs (end of the week). Generate model
+            predictions (incl. BGC) based on assimilation of remote sensing and data
+                                  from autonomous vehicles.&Generate model
+            predictions (incl. BGC) based on assimilation of remote sensing and data
+                                  from autonomous vehicles.&Generate model
+            predictions (incl. BGC) based on assimilation of remote sensing and data
+                                  from autonomous vehicles. Continue
+                                                             work
+                                                             post-cruise
+    to refine hindcasts\\
     \hline
-    Remote Sensing&SST, Chl, Turbidity images (Sentinel) used to
+     Remote Sensing&SST, Chl, Turbidity images (Sentinel) used to
                     identify the main features and select key stattions for
                     observations. Surface fields combined with observations in key
                     stations to build initial 3D fields for models.&SST, Chl, altimetry data used in assimilation
@@ -342,21 +338,35 @@ the two weeks of the experiment.
                                             local rivers and guide
                                             observations.\\
     \hline
-    Models&Build initialization and initial assimilation fields. 
-            Start model runs (end of the week). Generate model
-            predictions (incl. BGC) based on assimilation of remote sensing and data
-                                  from autonomous vehicles.&Generate model
-            predictions (incl. BGC) based on assimilation of remote sensing and data
-                                  from autonomous vehicles.&Generate model
-            predictions (incl. BGC) based on assimilation of remote sensing and data
-                                  from autonomous vehicles. Continue
-                                                             work
-                                                             post-cruise
-    to refine hindcasts\\
+    Ship-based observations& Research vessel crosses the \naz op area, deploy Multi-parametric buoy
+                             limited CTD casts, water sampling at key stations,
+                             ADCP data collected at key stations&&CTD
+                                                                   and
+                                                                   ADCP profiles,
+                                                                   rosette
+                                                                   samples
+                                                                   for
+                                                                   nutrients/phyto/zoo-plankton
+                                                                   ADCP on transit and at stations\\
     \hline
+    Laboratory Analysis&Samples analyzed for Nutrients and
+                         for phyto/zoo-plankton&Samples analyzed for Nutrients and
+                         for phyto/zoo-plankton&Samples analyzed for Nutrients and
+                         for phyto/zoo-plankton. Post cruise:
+                                                  Samples analyzed to
+                                                 enrich models for hindcasts\\
+    \hline
+    Small boat operations&CTD, fluorometry, profiles and samples at key
+                           stations, for nutrients/phyto+zoo-plankton.
+                           Vertical net samples for phyto/zoo-plankton&CTD, fluorometry, profiles and samples at key
+                           stations&CTD, fluorometry, profiles and samples at key
+                           stations\\
+    \hline    
   \end{tabular}
-  \label{tab:tasks}
-  \caption{Tasks and activities in \proj during Phases 1--3 (see Fig \ref{fig:expt-phases}).}
+  \caption{Summary of roles, tasks and activities with different assets
+    and processes in \proj during Phases 1--3 (see Fig
+    \ref{fig:expt-phases}).}
+    \label{tab:tasks}
   }
 \end{table}
 
