@@ -2,67 +2,121 @@
 
 \subsection{Modeling}
 
-There are two key objectives of \proje: one, to test observational
-strategies and evaluate the capacity to characterize and forecast the
-evolution of the prevailing coastal ocean conditions using a high
-resolution limited area model with assimilation. And second, to close
-the observation-prediction loop by adaptively driving the sampling of
+\proj has two key objectives: one, to test observational strategies
+and evaluate the capacity to characterize and forecast the evolution
+of the prevailing coastal ocean conditions using a high resolution
+limited area model with assimilation. And second, to close the
+observation-prediction loop by adaptively driving the sampling of
 robotic vehicles, to enhance model skill.
 
 The expected improvement in these objectives will reinforce the
-ability to support different sectors in the area -- from defense and
-crisis response operations, to fisheries, environmental managers and
-general coastal and nautical communities. It will also contribute to a
-significant improvement in the present understanding of the combined
-physical and biogeochemical processes that, in the \naz area,
-contribute to drive rapid development at all levels of the trophic
-chain and shape the coastal ocean environment and associated
-ecosystems.
+ability to support different sectors in the area -- from
+security/defense and crisis response operations, to fisheries,
+environmental management and general coastal and nautical
+communities. It will also contribute to a significant improvement in
+the our understanding of the combined physical and biogeochemical
+processes that in the \naz area, contribute to drive rapid
+development at all levels of the trophic chain and shape the coastal
+ocean environment and associated ecosystems.
 
 Central to this effort will be the use of the MIT Multidisciplinary
-Simulation, Estimation, and Assimilation System (MSEAS)
-\cite{haley10}. The core of the system is a free surface primitive
-equation model \kc{Continue MODEL DESCRIPTION MSEAS} integrates a
-biogeochemical model developed initially by Dusenberry and later
-improved by Lermusiaux \cite{becsiktepe03} which integrates 5
-compartments (chlorophyll, phytoplankton based on nitrate,
-phytoplankton based on ammonia, zooplankton, nitrate, ammonia and
-detritus) and 30 parameters. \proj will provide the opportunity to
-implement MSEAS at Instituto Hidrogr\'{a}fico (\inste) leveraging work
-between IH and MIT teams during the preparatory phase of the exercise.
+Simulation, Estimation, and Assimilation System (\msee)
+\cite{haley10,mseas10}. \mse consists of a set of mathematical models
+and computational methods for ocean predictions and dynamical
+diagnostics, for data assimilation and data-model comparisons, and
+secondarily for the optimization and adaptive sampling by autonomous
+systems. It has been used for fundamental research and for realistic
+simulations and predictions including monitoring \cite{lermusiaux07},
+real-time acoustic-ocean predictions \cite{xu08,lermusiaux10} and
+environmental management \cite{cossarini09}.
 
-A second and simpler model will also be used during \proje.  The
-Harvard Ocean Prediction System (HOPS) \cite{robinson96} is a rigid
-lid primitive equations model that integrates an optimal interpolation
-(OI) assimilation scheme. HOPS has been used at \inst for the
-operational support during Navy exercises, major crises at sea or in
-the support of research activities. It has a relatively modest need
-for computational resources which are available onboard research
-vessels. HOPS is also equipped with the initial version of the
-Dusenberry biogeochemical model.
+Several dynamical models are part of \msee, including a free-surface
+primitive-equation model which uses implicit two-way nesting
+\cite{haley10}. This multiscale free-surface code builds on the
+primitive-equation model of the Harvard Ocean Prediction System
+(\texttt{HOPS}) \cite{robinson96,haley99}.  Additionally, barotropic
+tides are calculated from an inverse tidal model
+\cite{logutov08a,logutov08b}.
+
+A central component in \mse uncertainty prediction is the Error
+Subspace Statistical Estimation for ensemble forecasting and data
+assimilation developed by Lermusiaux
+\cite{lermusiaux06,lermusiaux07}. \mse integrates a generalized
+biogeochemical model that can be adaptive at different
+levels. Depending on the number and type of state variables assigned
+the generalized biological model can become the classical NPZ model,
+the McGillicuddy model \cite{mcgillicuddy95}, the Anderson model
+\cite{anderson00}, the Dussenberry-Lermusiaux model
+\cite{becsiktepe03}, the Fasham model \cite{fasham90} or the Tian
+model \cite{tian00,tian01}.
+
+\mse was applied extensively in several scenarios and applications,
+including for physical-biogeochemical forecasts for the Philippines
+archipelago \cite{lermusiaux11}, in uncertainty forecasts for the
+Taiwan region during the Quantifying, Predicting and Exploiting
+Uncertainty (QPE) DRI \cite{gawarkiewicz11} and in stochastic
+reachability, path planning and adaptive sampling forecasts for
+gliders and floats during NASCar \cite{lermusiaux17}. The adaptive
+sampling and path planning capacities developed in \mse will be of
+importance during the observational program conducted by \proje,
+providing key guidance on the operational use of different
+observational assets to meet the key scientific questions defined for
+the study area.
+
+% The core of the system is a free surface primitive
+% equation model \kc{Continue MODEL DESCRIPTION MSEAS} integrates a
+% biogeochemical model developed initially by Dusenberry and later
+% improved by Lermusiaux \cite{becsiktepe03} which integrates 5
+% compartments (chlorophyll, phytoplankton based on nitrate,
+% phytoplankton based on ammonia, zooplankton, nitrate, ammonia and
+% detritus) and 30 parameters.
+
+\proj will provide the opportunity to implement \mse at Instituto
+Hidrogr\'{a}fico (\inste) leveraging work between IH and MIT teams
+during the preparatory phase of the exercise. The model will be
+initialized using data collected during the first (precursor survey --
+see Table \ref{tab:tasks}) phase of the exercise combined with remote
+sensing data and historical observations available for this regional
+area and run operationally for the complete extent of the
+experiment. Forecasts of the evolution of the physical and
+biogeochemical fields will be used during the exercise to fine-tune
+the observation program and in the planning of autonomous vehicles
+operations. \kc{Once the observations program completed \mse will be
+  used in hindcast mode to}
+
+A second and simpler model, \texttt{HOPS}, will also be used during
+\proje, which is a rigid lid primitive equations model that integrates
+an optimal interpolation (OI) assimilation scheme. \texttt{HOPS} has
+been used at \inst for the operational support during Navy exercises,
+major crises at sea or in the support of research activities. It has a
+relatively modest need for computational resources which are available
+onboard research vessels. \texttt{HOPS} is also equipped with a
+hierarchy of biogeochemical models that comprise the majority of the
+models available in \msee.
 
 This effort will be guided by the use of the previous implementation
-of HOPS for the \naz area. The model was configured using a high
-resolution Cartesian horizontal grid (300 m resolution), 30 double
+of \texttt{HOPS} for the \naz area. The model was configured using a
+high resolution Cartesian horizontal grid (300m resolution), 30 double
 sigma levels in the vertical and a realistic topography of the \naz
-Canyon area conditioned to meet the hydrostatic consistency
+canyon area conditioned to meet the hydrostatic consistency
 requirements.  Atmospheric forcing conditions will be provided by
 available operational forecast models. Operational models at \inst use
 the analysis and forecasts to 6 days provided by the European Centre
 for Medium Range Weather Forecast (ECMWF) and made available by the
-Portuguese node at Instituto Portugu\^{e}s do Mar e da Atmosfera (IPMA
--- the Portuguese NOAA).  Boundary conditions at the open boundaries
-of the models will be provided by available regional models. These
-include the results provided by the Copernicus Marine Service for the
-IBIROSS area which are a NEMO model (analysis and forecasts to 5 days,
-3km resolution and 50 vertical levels) or the results from the HYCOM
-model configuration run operationally at \inst covering the Iberian
-area and Moroccan margin.  Boundary conditions at the coastal boundary
-associated with freshwater outflows due to some of he small rivers
-that directly affect the model domain area will be incorporated using
-the information available about discharge conditions provided by the
-National Information System on Hydric Resources portal made available
-by the Portuguese Agency for the Environment.
+Portuguese node at Instituto Portugu\^{e}s do Mar e da Atmosfera
+(\texttt{IPMA} -- the Portuguese NOAA).  Boundary conditions at the
+open boundaries of the models will be provided by available regional
+models. These include the results provided by the Copernicus Marine
+Service for the IBIROSS area which is a NEMO model (analysis and
+forecasts to 5 days, 3km resolution and 50 vertical levels) or the
+results from the HYCOM model configuration run operationally at \inst
+covering the Iberian area and Moroccan margin.  Boundary conditions at
+the coastal boundary associated with freshwater outflows due to some
+of the small rivers that directly impact the model domain area will be
+incorporated using the information available about discharge
+conditions provided by the \kc{National Information System on Hydric
+  Resources} portal \kc{URL?} made available by the Portuguese
+Environment Agency.
 
 % \kc{Data sets to model initialization and assimilation \ldots}
 

@@ -1,4 +1,4 @@
-\subsection{AI \& Networked Robotics in \proje}
+\subsection{Networked Robotics  and AI  in \proje}
 
 \begin{figure}[!t]
   \centering 
@@ -24,22 +24,40 @@
   \label{fig:ai-figs}
 \end{figure}
 
-In \proj we will use a range of well-tested networked autonomous
-platforms (Fig. \ref{fig:vehicles}) operating with a substantial
-operational legacy\footnote{\url{https://lsts.pt}} in coastal domains
-\cite{pinto13,pinto14,sousa16,Ferreira2018,Pinto2018MultipleAV}. To
-bind these unmanned assets, as well as users connecting from different
-locations on shore, we rely on different components of the open source
-\ls toolchain \cite{pinto2013lsts}. A brief summary of the toolchain
-components is given in Table \ref{tab:toolchain}. In addition we will
-leverage the considerable efforts in decision-making using Artificial
-Intelligence (AI) methods targeting marine robotics. Our own efforts
-revolve around operationalizing autonomous aerial, surface and
-underwater platforms with embedded or off-shore decision-making
-capacity which focus on the sense-plan-act control loop embedded on
-autonomous vehicles.
+In \proj we will use a range of networked UUVs, USVs and UAVs
+(Fig. \ref{fig:vehicles}) operating with a substantial operational
+legacy\footnote{\url{https://lsts.pt}} in coastal domains
+\cite{pinto13,pinto14,sousa16,Ferreira2018,Pinto2018MultipleAV}.  Most
+of UUVs come equipped with CTDs, some with physical and bio-chemical
+sensors. These vehicles have evolved from a relatively simple design
+operating near-shore \cite{sousa2012lauv} with limited battery
+capacity to those currently being used for open water operations with
+an operational capacity that can exceed 48 hours. We will also use
+shore-based customized Skywalker X-8 UAVs with either regular RGB
+cameras or equipped with FLIR or hyper-spectral imagers scouting for
+surface temperature gradients. The architecture for command and
+control is built on top of a mature toolchain \cite{pinto2013lsts},
+which has a back-seat driver API to the \du software which is in
+charge of navigation, logging and management of all communications
+onboard any vehicle. \du allows external controllers to provide
+desired poses for the platform while receiving progress updates on
+their attainability.  This allows for the development of external
+controllers which are not tied to specific vehicle hardware allowing
+\du to use provided slack to improve vehicle safety, navigation or
+battery optimization. A brief summary of the toolchain components is
+given in Table \ref{tab:toolchain}. In addition we will leverage the
+considerable efforts in decision-making using Artificial Intelligence
+(AI) methods targeting marine robotics. Our own efforts revolve around
+operationalizing autonomous aerial, surface and underwater platforms
+with embedded or off-shore decision-making capacity which focus on the
+sense-plan-act control loop embedded on autonomous vehicles.
 
-\begin{table}[!b]
+
+% To bind these unmanned assets, as well as users connecting from
+% different locations on shore/ship, we rely on different components of
+% the open source \ls toolchain \cite{pinto2013lsts}. 
+
+\begin{table}[!t]
   \centering
   \footnotesize{
   \begin{tabular}{|p{1.8cm}|p{12.8cm}|p{0.75cm}|}\hline 
@@ -71,8 +89,6 @@ autonomous vehicles.
   }
 \end{table}
 
-
-
 We will use \rx (Teleo-Reactive EXecutive) an AI-based automated
 planning/execution temporal framework to execute tasks
 continuously. \rx is the only operational, \emph{deliberative} AI
@@ -87,12 +103,17 @@ synthesizing control actions onboard a robot and decomposing
 high-level objectives sent from shore (or ship or even other
 robots). It builds a task plan to actuate a robot while simultaneously
 observing the evolving state of the robot's surroundings and
-dynamically incorporating plan repair
-\cite{py10,rajan12,rajan12b}. The symbolic planner at the heart of \rx
-has a rich legacy from \nas having flown onboard the Deep Space 1
-mission \cite{rajan00,jonsson00}, in addition to commanding the two
-Mars Exploration Rovers (MER), \emph{Spirit} and \emph{Opportunity}
-\cite{aichang04,bresina05}.
+dynamically incorporating plan repair \cite{py10,rajan12,rajan12b}.
+Using the back-seat API, when \rx receives a goal, its objective is to
+synthesize partial plans and execute these while simultaneously
+monitoring execution onboard the vehicle. We use a publish-subscribe
+message-centric system, \imc \cite{imc2009}, that is used for state
+updates all throughout the system, and to send commands and high-level
+objectives to the platforms. \nep provides visualization, situational
+awareness and commanding with human operators. \nep consoles consist
+of an empty canvas populated with visual widgets and map layers that
+reflect the data received and allow interaction with the network over
+\imce.  
 
 At its core, \rx has been used for dynamic feature tracking and
 adaptive sampling to map fronts \cite{fronts11,smith14}, blooms
@@ -111,7 +132,12 @@ high-resolution sampling data to be fed into the bio-geochemical
 model. Predictions of where the patches might advect will then be
 driven by ocean physics in the model and ground-truthed by the vehicle
 in a subsequent iteration of the strategy to \texttt{tag},
-\texttt{track} and \texttt{observe} strategy.
+\texttt{track} and \texttt{observe} strategy.  
 
+The symbolic planner at the heart of \rx has a rich legacy from \nas
+having flown onboard the Deep Space 1 mission
+\cite{rajan00,jonsson00}, in addition to commanding the two Mars
+Exploration Rovers (MER), \emph{Spirit} and \emph{Opportunity}
+\cite{aichang04,bresina05}.
 
 
