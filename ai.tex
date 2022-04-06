@@ -1,6 +1,36 @@
 \subsection{Networked Robotics  and AI  in \proje}
 
-\begin{figure}[!b]
+In \proj we will use a range of networked UUVs, USVs and UAVs
+(Fig. \ref{fig:vehicles}) operating with a substantial operational
+legacy\footnote{\url{https://lsts.pt}} in coastal domains
+\cite{pinto13,pinto14,sousa16,Ferreira2018,Pinto2018MultipleAV,pinto21}.
+Most of the UUVs come equipped with CTDs, some with physical and
+bio-chemical sensors. These vehicles have evolved from a relatively
+simple design operating near-shore \cite{sousa2012lauv} with limited
+battery capacity to those currently being used for open water
+operations with an operational capacity that can exceed 48 hours. We
+will also use shore-based customized Skywalker X-8 UAVs with either
+regular RGB cameras, FLIR or hyper-spectral imagers scouting for
+surface temperature gradients. The architecture for command and
+control of this networked system is built on top of a mature toolchain
+\cite{pinto2013lsts}, which has a back-seat driver API to the \du
+software which is in charge of navigation, logging and management of
+all communications onboard any vehicle. \du allows external
+controllers to provide desired poses for the platform while receiving
+progress updates on their attainability.  This allows for the
+development of external controllers which are not tied to specific
+vehicle hardware allowing \du to use provided slack to improve vehicle
+safety, navigation or battery optimization. A brief summary of the
+toolchain components is given in Table \ref{tab:toolchain}. In
+addition we will leverage the considerable efforts in decision-making
+using Artificial Intelligence (AI) methods targeting marine
+robotics. Our own efforts revolve around operationalizing autonomous
+aerial, surface and underwater platforms with embedded or off-shore
+decision-making capacity which focus on the sense-plan-act control
+loop embedded on autonomous vehicles.
+
+
+\begin{figure}[!ht]
   \centering 
   \subfigure[]{\label{fig:vehicles}\includegraphics[scale=0.075]{fig/vehicles.jpg}}
   \hspace{+0.5cm} 
@@ -24,40 +54,11 @@
   \label{fig:ai-figs}
 \end{figure}
 
-In \proj we will use a range of networked UUVs, USVs and UAVs
-(Fig. \ref{fig:vehicles}) operating with a substantial operational
-legacy\footnote{\url{https://lsts.pt}} in coastal domains
-\cite{pinto13,pinto14,sousa16,Ferreira2018,Pinto2018MultipleAV,pinto21}.  Most
-of UUVs come equipped with CTDs, some with physical and bio-chemical
-sensors. These vehicles have evolved from a relatively simple design
-operating near-shore \cite{sousa2012lauv} with limited battery
-capacity to those currently being used for open water operations with
-an operational capacity that can exceed 48 hours. We will also use
-shore-based customized Skywalker X-8 UAVs with either regular RGB
-cameras or equipped with FLIR or hyper-spectral imagers scouting for
-surface temperature gradients. The architecture for command and
-control is built on top of a mature toolchain \cite{pinto2013lsts},
-which has a back-seat driver API to the \du software which is in
-charge of navigation, logging and management of all communications
-onboard any vehicle. \du allows external controllers to provide
-desired poses for the platform while receiving progress updates on
-their attainability.  This allows for the development of external
-controllers which are not tied to specific vehicle hardware allowing
-\du to use provided slack to improve vehicle safety, navigation or
-battery optimization. A brief summary of the toolchain components is
-given in Table \ref{tab:toolchain}. In addition we will leverage the
-considerable efforts in decision-making using Artificial Intelligence
-(AI) methods targeting marine robotics. Our own efforts revolve around
-operationalizing autonomous aerial, surface and underwater platforms
-with embedded or off-shore decision-making capacity which focus on the
-sense-plan-act control loop embedded on autonomous vehicles.
-
-
 % To bind these unmanned assets, as well as users connecting from
 % different locations on shore/ship, we rely on different components of
 % the open source \ls toolchain \cite{pinto2013lsts}. 
 
-\begin{table}[!b]
+\begin{table}[!t]
   \centering
   \footnotesize{
   \begin{tabular}{|p{1.8cm}|p{12.8cm}|p{0.75cm}|}\hline 
@@ -120,8 +121,8 @@ adaptive sampling to map fronts \cite{fronts11,smith14}, blooms
 \cite{Das-2010-637}, ecological transport \cite{jdas12,jdas13} and
 lagrangian drifters \cite{das10,das11a} while targeting multi-vehicle
 deployments \cite{das11,Ferreira2018,pinto20}. Equally, the approaches
-embedded in \rx use \emph{information theoretic} methods using marine
-robots driven by a range of information sources
+embedded in \rx use \emph{information theoretic} methods using a range
+of information sources
 \cite{Das-2010-637,fronts11,olaya12,jdas12,jdas13,das15,fossum18,fossum19,fossum19b,fossum21}.
 For \proj, we will use our reference work on adaptively sampling
 dynamic underwater features, such as a sub-surface Chlorophyl max
@@ -132,7 +133,7 @@ high-resolution sampling data to be fed into the bio-geochemical
 model. Predictions of where the patches might advect will then be
 driven by ocean physics in the model and ground-truthed by the vehicle
 in a subsequent iteration of the strategy to \texttt{tag},
-\texttt{track} and \texttt{observe} strategy.  
+\texttt{track} and \texttt{observe} strategy.
 
 The symbolic planner at the heart of \rx has a rich legacy from \nas
 having flown onboard the Deep Space 1 mission
